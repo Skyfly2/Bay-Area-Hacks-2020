@@ -19,4 +19,7 @@ app.post('/register', (req, res) => {
         if (err) return console.log(err);
         res.json({ status: 'registered' });
     })
-})
+});
+
+app.listen(4000, () => console.log('listening on 4000'));
+
