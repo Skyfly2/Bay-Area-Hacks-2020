@@ -9,7 +9,7 @@ function Login(props) {
 
     const login = async e => {
         if (user === '' || pass === '') {
-            return changeStatus
+            return changeStatus('blank')
         }
         let response = await axios.post('http://localhost:4000/login', {
             user: user,
@@ -53,7 +53,7 @@ function Login(props) {
                     </div>
                 </div>
             );
-        case 'dne':
+        case 'blank':
             return (
                 <div className="content">
                     <div className="center login">

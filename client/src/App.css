@@ -63,3 +63,27 @@
 .red{
   color: red;
 }
+
+.feature{
+  display: flex;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.right{
+  text-align:  right;
+  width: 100%;
+}
+
+.left{
+  text-align: left;
+}
+
+.chart{
+  height: 300px;
+}
+
+.pad{
+  padding-left: 15px;
+  padding-right: 15px;
+}
