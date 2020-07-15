@@ -27,5 +27,23 @@ app.post('/register', (req, res) => {
     })
 });
 
+// Login a user
+app.post('/login', (req, res) => {
+    const info = req.body;
+    const login = require('./scripts/login');
+    login(info, (err, resp) => {
+        if (err) return console.log(err);
+        if (resp === 1) {
+            res.json({ status: 'success' });
+        }
+        else if (resp === 2) {
+            res.json({ status: 'dne' });
+        }
+        else {
+            res.json({ status: 'wrong' });
+        }
+    })
+})
+
 app.listen(4000, () => console.log('listening on 4000'));
 
