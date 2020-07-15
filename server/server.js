@@ -10,3 +10,13 @@ app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
+
+// Register a user
+app.post('/register', (req, res) => {
+    const info = req.body;
+    const register = require('./scripts/register');
+    register(info, (err, resp) => {
+        if (err) return console.log(err);
+        res.json({ status: 'registered' });
+    })
+})
