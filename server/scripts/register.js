@@ -7,6 +7,7 @@ module.exports = register = (req, res) => {
     // Haha callback hell :(
     checkuser(req.user, (err, resp) => {
         if (err) return console.log(err);
+        // Check to see if user exists
         if (resp.length === 0) {
             // Hash Password
             bcrypt.hash(req.pass, 10, function (err, hash) {
@@ -18,6 +19,7 @@ module.exports = register = (req, res) => {
             });
         }
         else {
+            // User already exists
             res(null, null);
         }
     });

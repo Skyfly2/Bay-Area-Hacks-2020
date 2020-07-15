@@ -4,18 +4,22 @@ import axios from 'axios';
 function Register(props) {
     const register = async e => {
         e.preventDefault();
+        // Validate input
         if (user === '' || pass === '' || first === '' || last === '') {
             return changeStatus('blank');
         }
+        // Validate passwords
         else if (pass !== cpass) {
             return changeStatus('pass-no-match');
         }
+        // Connect to server
         let response = await axios.post('http://localhost:4000/register', {
             user: user,
             pass: pass,
             first: first,
             last: last
         });
+        // Check to see if username is taken
         if (response.data.status === 'taken') {
             return changeStatus('taken');
         }
