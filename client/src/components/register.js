@@ -14,11 +14,11 @@ function Register(props) {
     }
 
     // Declare States
-    const [user, updateUser] = useState(null);
-    const [pass, updatePass] = useState(null);
-    const [cpass, updateCPass] = useState(null);
-    const [first, updateFirst] = useState(null);
-    const [last, updateLast] = useState(null);
+    const [user, updateUser] = useState('');
+    const [pass, updatePass] = useState('');
+    const [cpass, updateCPass] = useState('');
+    const [first, updateFirst] = useState('');
+    const [last, updateLast] = useState('');
     const [status, changeStatus] = useState(null);
 
     switch (status) {
