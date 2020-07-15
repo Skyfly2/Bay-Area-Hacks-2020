@@ -17,7 +17,13 @@ app.post('/register', (req, res) => {
     const register = require('./scripts/register');
     register(info, (err, resp) => {
         if (err) return console.log(err);
-        res.json({ status: 'registered' });
+        if (resp) {
+            res.json({ status: 'registered' });
+        }
+        else {
+            res.json({ status: 'taken' })
+        }
+
     })
 });
 
